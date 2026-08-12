@@ -12,8 +12,8 @@ as an ESRI Shapefile.
 4. The notebook finds the peat-thickness and land-cover GeoTIFFs in
    `My Drive/Colab Notebooks/PanAfrica_LU`, selects peat thickness above 0.01 m
    and open-water class 1, aggregates both to a shared 500 m equal-area grid,
-   retains open-water cells within 10 km of peatland, removes 4-neighbour
-   connected grid components smaller than 100 km² before polygonization,
+   retains all open-water cells within 200 km of peatland, removes 4-neighbour
+   connected grid components smaller than 5,000 cells (1,250 km²) before polygonization,
    dissolves the retained footprint, and downloads the zipped shapefile. The
    preview displays peatland and retained water in contrasting colors.
 
