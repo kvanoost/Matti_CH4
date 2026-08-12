@@ -15,5 +15,6 @@ stored in Google Drive and exporting peatland—pixels with peat thickness above
    equal-area grid, polygonizes and dissolves the selected grid cells, zips the
    shapefile components, and downloads the ZIP.
 
-The output uses the EPSG:6933 equal-area coordinate system, whose metre-based
-coordinates support a consistent 1 km grid across Africa.
+The 1 km aggregation is calculated in the EPSG:6933 equal-area coordinate
+system. The finished outline is reprojected to EPSG:4326 before export for
+straightforward upload as a Google Earth Engine table asset.
