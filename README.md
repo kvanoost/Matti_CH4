@@ -11,10 +11,12 @@ as an ESRI Shapefile.
 3. Approve the Google Drive mount when prompted.
 4. The notebook finds the peat-thickness and land-cover GeoTIFFs in
    `My Drive/Colab Notebooks/PanAfrica_LU`, selects peat thickness above 0.01 m
-   and open-water class 1, aggregates both to a shared 10 km equal-area grid,
-   retains open-water cells within 10 km of peatland, dissolves the combined
-   outline, and downloads the zipped shapefile.
+   and open-water class 1, aggregates both to a shared 500 m equal-area grid,
+   retains open-water cells within 10 km of peatland, removes disconnected
+   polygon components smaller than 100 km², dissolves the retained footprint,
+   and downloads the zipped shapefile.
 
-The 10 km aggregation is calculated in the EPSG:6933 equal-area coordinate
+The 500 m aggregation and area filtering are calculated in EPSG:6933, an
+equal-area coordinate
 system. The finished outline is reprojected to EPSG:4326 before export for
 straightforward upload as a Google Earth Engine table asset.
