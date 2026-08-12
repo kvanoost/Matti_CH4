@@ -11,7 +11,9 @@ Google Drive and exporting the open-water and peat-forest land-cover areas
 3. Approve the Google Drive mount when prompted.
 4. The notebook finds `Crezee_2022*.tif` in
    `My Drive/Colab Notebooks/PanAfrica_LU`, displays a downsampled map,
-   polygonizes and dissolves valid pixels belonging to classes 1, 4, or 5,
-   zips the shapefile components, and downloads the ZIP.
+   aggregates classes 1, 4, and 5 to a 1 km equal-area grid, polygonizes and
+   dissolves the selected grid cells, zips the shapefile components, and
+   downloads the ZIP.
 
-The output polygon retains the GeoTIFF's native coordinate reference system.
+The output uses the EPSG:6933 equal-area coordinate system, whose metre-based
+coordinates support a consistent 1 km grid across Africa.
