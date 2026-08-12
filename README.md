@@ -14,8 +14,9 @@ as an ESRI Shapefile.
    and open-water class 1, aggregates both to a shared 500 m equal-area grid,
    retains all open-water cells within 200 km of peatland, removes 4-neighbour
    connected grid components smaller than 5,000 cells (1,250 km²) before polygonization,
-   dissolves the retained footprint, and downloads the zipped shapefile. The
-   preview displays peatland and retained water in contrasting colors.
+   fills enclosed background holes smaller than the same threshold, and
+   downloads the zipped shapefile. Peatland and water are exported as separate
+   dissolved features identified by `type = peatland` and `type = open_water`.
 
 The 500 m aggregation and area filtering are calculated in EPSG:6933, an
 equal-area coordinate
